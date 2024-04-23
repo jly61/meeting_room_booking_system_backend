@@ -1,0 +1,1 @@
+{"version":3,"file":"update-meeting-room.dto.js","sourceRoot":"","sources":["../../../src/meeting-room/dto/update-meeting-room.dto.ts"],"names":[],"mappings":";;;;;;;;;;;;AAAA,qDAA6C;AAC7C,uEAAiE;AACjE,6CAA2D;AAE3D,MAAa,oBAAqB,SAAQ,IAAA,qBAAW,EAAC,8CAAoB,CAAC;CAM1E;AAND,oDAMC;AADC;IAJC,IAAA,qBAAW,GAAE;IACb,IAAA,4BAAU,EAAC;QACV,OAAO,EAAE,SAAS;KACnB,CAAC;;gDACS"}
