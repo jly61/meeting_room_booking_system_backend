@@ -1,0 +1,39 @@
+version: '3.8'
+services:
+  nest-app:
+    # 构建镜像上下文路径
+    build:
+      # 上下文路径
+      context: ./
+      # 指定构建镜像的 Dockerfile 文件名
+      dockerfile: ./Dockerfile
+      # 设置依赖关系，默认先启动依赖
+    depends_on:
+      - mysql-container
+      - redis-container
+    ports:
+      - '3000:3000'
+    networks:
+      - common-network
+  mysql-container:
+    # 指定容器的镜像
+    image: mysql
+    volumes:
+      # 挂载数据卷，HOST:CONTAINER 格式
+      - /Users/liw/Devloper/DockerMount/meeting-mysql-prod:/var/lib/mysql
+    # 环境变量
+    environment:
+      MYSQL_DATABASE: meeting_room_booking_system
+      MYSQL_ROOT_PASSWORD: xing3721.
+    networks:
+      - common-network
+  redis-container:
+    image: redis
+    volumes:
+      - /Users/liw/Devloper/DockerMount/meeting-redis-prod:/data
+    networks:
+      - common-network
+
+networks:
+  common-network:
+    driver: bridge
