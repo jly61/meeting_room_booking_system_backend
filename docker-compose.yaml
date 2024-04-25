@@ -1,5 +1,13 @@
 version: '3.8'
 services:
+  frontend-admin-app:
+    image: registry.cn-chengdu.aliyuncs.com/jly61/jly:v1
+    ports:
+      - '80:80'
+    depends_on:
+      - nest-app
+    networks:
+      - common-network
   nest-app:
     # 构建镜像上下文路径
     build:
